@@ -26,8 +26,10 @@ methods: {
         })
         this.activeMessage = ''
         setTimeout(() => {
+                    this.scroll() 
+        }, 100)
+        setTimeout(() => {
             this.sendAnswers() 
-            
         }, 1000)
     }, 
     sendAnswers(){
@@ -36,7 +38,15 @@ methods: {
             message: this.messages[getRndInteger(0, this.messages.length - 1)],
             status:'received'
         })
+        setTimeout(() => {
+            this.scroll() 
+        }, 100)
+    },
+    scroll(){
+        const element = document.querySelector('.chat');
+        element.scroll({top: element.scrollHeight, behavior: 'smooth'});
     }
+
 },
 computed: {
     activeIndex(){

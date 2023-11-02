@@ -120,7 +120,7 @@
                         </div>
                         <div class="col-12 flex-grow-1 chat overflow-y-auto h0">
                             <div class="m-3" v-for="(element, index) in contacts[activeIndex].messages" key="element.id" :class="element.status">
-                                <div class="w-25 rounded-4 m-3 d-inline-block p-3 position-relative" >
+                                <div class="w-40 rounded-4 m-3 d-inline-block p-3 position-relative" >
                                     {{contacts[activeIndex].messages[index].message}}
                                     <span class="little-text position-absolute time-message">
                                         {{contacts[activeIndex].messages[index].date}}
@@ -143,7 +143,9 @@
                                 <i class="fa-solid fa-microphone dark-grey"></i>
                             </div>
                             <div v-else>
-                                <i class="fa-solid fa-paper-plane dark-grey"></i>
+                                <button class="btn" @click="sendMessage">
+                                    <i class="fa-solid fa-paper-plane dark-grey"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
