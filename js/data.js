@@ -169,3 +169,25 @@ export const contacts = [
         ],
     }
 ]
+
+export const messages = [
+    'Ciao!',
+    'Certo!',
+    'Non è colpa mia',
+    'Non ci provare',
+    'Mi dispiace tanto',
+    'Non mi interessa',
+    'Ok!',
+    'Viva Boolean',
+    'Dobbiamo parlare...',
+    'Capisco',
+    'Nel dubbio: Alt-F4',
+    'Tu sorridi e annuisci',
+    'Questa piccola manovra ci costerà 70 anni',
+    'Io sono tuo padre',
+    'Vai Pikachu, scelgo te!',
+    'Non posso ne scendere, ne salire!',
+    'E questa è la storia di come ho conosciuto tua madre..',
+    'Chi osa interrompere il sonno di Pdor?? Figlio di Kmer, della tribù di Istar! Della terra desolata del Kfnir!? Uno degli ultimi sette saggi: Bvuur, Ghaner, Asta-paring, Divin, Ganhir, Chunchur e Tarahr! Eh?! Pdor! Colui che era, colui che stato e colui che sempre sarà, ciuccia qui e ciuccia là, eh! Pdor! Il grande Pdor che vive negli abissi! Colui che ha inseguito e ha sconfitto i demoni Sem, che ora vagano per il mondo domandandosi: ma nu, chi sem?',
+    'Ma non è questo il giorno!!',
+]
