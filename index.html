@@ -32,7 +32,7 @@
     <div id="app">
         <div class="container h-100">
             <div class="row h-100 flex-nowrap">
-                <div class="col-12 col-md-4 contacts">
+                <div class="col-12 col-md-4 contacts border-end">
                     <div class="row h-100 flex-column ">
                         <div class="col-12 header d-flex justify-content-between align-items-center">
                             <div class="d-flex my-2 align-items-center">
@@ -65,14 +65,16 @@
                         </div>
                         <div class="col-12 bg-search-bar">
                             <div class="input-group my-2">
-                                <span class="input-group-text" id="basic-addon1">
-                                    <i class="fa-solid fa-magnifying-glass top-icon"></i>
+                                <span class="input-group-text bg-white" id="basic-addon1">
+                                    <button class="btn py-0">
+                                        <i class="fa-solid fa-magnifying-glass top-icon"></i>
+                                    </button>
                                 </span>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 reset-padding">
-                            <div class="d-flex border-top">
+                            <div class="d-flex border-top justify-content-between">
                                 <div class="d-flex py-2">
                                     <div class="w-15">
                                         <img src="img/avatar_1.jpg" alt="avatar1" class="img-fluid rounded-circle m-2">
@@ -86,7 +88,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="text-end little-text p-2">
+                                <div class="little-text p-2">
                                     12.00
                                 </div>
                             </div>
@@ -94,15 +96,29 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-8">
-                    <div class="row">
-                        <div class="col-12 col-md-8">
+                    <div class="row h-100 flex-column">
+                        <div class="col-12 header d-flex justify-content-between align-items-center">
+                            <div class="d-flex my-2 align-items-center">
+                                <div class="w-15">
+                                    <img src="img/avatar_1.jpg" alt="me" class="img-fluid rounded-circle">
+                                </div>
+                                <span class="mx-2">
+                                    Michele
+                                </span>
+                            </div>
+                            <div class="d-flex top-icon">
+                                <i class="fa-solid fa-magnifying-glass mx-2 fs-5"></i>
+                                <i class="fa-solid fa-paperclip mx-2 fs-5"></i>
+                                <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5"></i>
+                            </div>
+                        </div>
+                        <div class="col-12 flex-grow-1 chat overflow-y-scroll">
                             
                         </div>
-                        <div class="col-12 col-md-8">
-
-                        </div>
-                        <div class="col-12 col-md-8">
-
+                        <div class="col-12 header d-flex align-items-center justify-content-evenly p-2">
+                            <i class="fa-regular fa-face-smile fa dark-grey"></i>
+                            <input type="text" class="w-75 border-0 p-2 rounded-2" placeholder="Scrivi un messaggio">
+                            <i class="fa-solid fa-microphone dark-grey"></i>
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,7 @@ body{
     font-size: 20px;
 }
 .w-15{
-    width: 15%;
+    width: 50px;
 }
 .little-text{
     font-size: 13px;
@@ -66,4 +66,7 @@ body{
 .reset-padding {
     padding-left: 0 !important;
     padding-right: 0 !important;
+}
+.chat{
+    background-image: url(../img/mine.jpg);
 }
