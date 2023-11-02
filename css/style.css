@@ -60,7 +60,7 @@ body{
     width: 50px;
 }
 .little-text{
-    font-size: 13px;
+    font-size: 10px;
     color: var(--color-text-grey);
 }
 .reset-padding {
