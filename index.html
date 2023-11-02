@@ -118,7 +118,7 @@
                                 <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5"></i>
                             </div>
                         </div>
-                        <div class="col-12 flex-grow-1 chat overflow-y-scroll">
+                        <div class="col-12 flex-grow-1 chat overflow-y-auto h0">
                             <div class="m-3" v-for="(element, index) in contacts[activeIndex].messages" key="element.id" :class="element.status">
                                 <div class="w-25 rounded-4 m-3 d-inline-block p-3 position-relative" >
                                     {{contacts[activeIndex].messages[index].message}}
@@ -138,7 +138,7 @@
                         </div>
                         <div class="col-12 header d-flex align-items-center justify-content-evenly p-2">
                             <i class="fa-regular fa-face-smile fa dark-grey"></i>
-                            <input type="text" class="w-75 border-0 p-2 rounded-2" placeholder="Scrivi un messaggio">
+                            <input type="text" class="w-75 border-0 p-2 rounded-2" placeholder="Scrivi un messaggio" v-model="activeMessage" @keyup.enter="sendMessage">
                             <i class="fa-solid fa-microphone dark-grey"></i>
                         </div>
                     </div>
