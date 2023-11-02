@@ -139,7 +139,12 @@
                         <div class="col-12 header d-flex align-items-center justify-content-evenly p-2">
                             <i class="fa-regular fa-face-smile fa dark-grey"></i>
                             <input type="text" class="w-75 border-0 p-2 rounded-2" placeholder="Scrivi un messaggio" v-model="activeMessage" @keyup.enter="sendMessage">
-                            <i class="fa-solid fa-microphone dark-grey"></i>
+                            <div v-if="activeMessage === ''">
+                                <i class="fa-solid fa-microphone dark-grey"></i>
+                            </div>
+                            <div v-else>
+                                <i class="fa-solid fa-paper-plane dark-grey"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
