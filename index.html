@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 reset-padding">
-                            <div v-for="(element) in contacts" :key="element.id" class="d-flex border-top justify-content-between contact" @click="activeContact = element.id">
+                            <div v-for="(element) in contacts" :key="element.id" class="d-flex border-top justify-content-between contact" @click="activeContact = element.id" :class="{'active': isActive(element.id)}">
                                 <div class="d-flex py-2">
                                     <div class="w-15">
                                         <img :src="element.avatar" alt="avatar1" class="img-fluid rounded-circle m-2">
@@ -119,22 +119,22 @@
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 chat overflow-y-scroll">
-                            <div class="m-3">
-                                <div class="received w-25 rounded-4 m-3 d-inline-block p-3 position-relative">
-                                    ricevuto
+                            <div class="m-3" v-for="(element, index) in contacts[activeIndex].messages" key="element.id" :class="element.status">
+                                <div class="w-25 rounded-4 m-3 d-inline-block p-3 position-relative" >
+                                    {{contacts[activeIndex].messages[index].message}}
                                     <span class="little-text position-absolute time-message">
-                                        12.00
+                                        {{contacts[activeIndex].messages[index].date}}
                                     </span>
                                 </div>
                             </div>
-                            <div class="text-end m-3">
-                                <div class="sent w-25 rounded-4 m-3 text-start d-inline-block p-3 position-relative">
+                            <!-- <div class="text-end m-3">
+                                <div class="sent w-25 rounded-4 m-3 text-start d-inline-block p-3 position-relative" >
                                     inviato
                                     <span class="little-text position-absolute time-message">
                                         12.00
                                     </span>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-12 header d-flex align-items-center justify-content-evenly p-2">
                             <i class="fa-regular fa-face-smile fa dark-grey"></i>

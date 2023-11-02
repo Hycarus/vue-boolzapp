@@ -11,6 +11,10 @@ data(){
 },
 // contiene le funzioni e i metodi
 methods: {
+    isActive(id){
+        return id === this.activeContact ? true : false;
+    }
+
 },
 computed: {
     activeIndex(){

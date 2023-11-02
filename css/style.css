@@ -71,9 +71,15 @@ body{
     background-image: url(../img/mine.jpg);
 }
 .sent{
-    background-color: var(--color-sent-message);
+    text-align: right;
 }
 .received{
+    text-align: left;
+}
+.sent div{
+    background-color: var(--color-sent-message);
+}
+.received div{
     background-color: var(--color-bg-search-bar);
 }
 .time-message{
@@ -83,4 +89,13 @@ body{
 
 .contact:hover {
     background-color: var(--color-contact-hover);
+    transition: all 0.3s;
+}
+.active{
+    background-color: var(--color-dark-grey);
+    transition: all 0.3s;
+}
+.active:hover {
+    background-color: var(--color-dark-grey);
+    transition: all 0.3s;
 }
