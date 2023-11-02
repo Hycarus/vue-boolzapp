@@ -70,3 +70,13 @@ body{
 .chat{
     background-image: url(../img/mine.jpg);
 }
+.sent{
+    background-color: var(--color-sent-message);
+}
+.received{
+    background-color: var(--color-bg-search-bar);
+}
+.time-message{
+    right: 10px;
+    bottom: 5px;
+}
