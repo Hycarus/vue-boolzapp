@@ -21,17 +21,94 @@
     >
     <!-- link to Font-Family and CSS Files -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Document Title -->
     <title>Document</title>
   </head>
 
   <body>
+    <div id="app">
+        <div class="container h-100">
+            <div class="row h-100 flex-nowrap">
+                <div class="col-12 col-md-4 contacts">
+                    <div class="row h-100 flex-column ">
+                        <div class="col-12 header d-flex justify-content-between align-items-center">
+                            <div class="d-flex my-2 align-items-center">
+                                <div class="w-15">
+                                    <img src="img/avatar_8.jpg" alt="me" class="img-fluid rounded-circle">
+                                </div>
+                                <span class="mx-2">
+                                    Mirko
+                                </span>
+                            </div>
+                            <div class="d-flex top-icon">
+                                <i class="fa-solid fa-circle-notch mx-2 fs-5"></i>
+                                <i class="fa-solid fa-message mx-2 fs-5"></i>
+                                <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5"></i>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex bg-notification p-3">
+                            <div class="rounded-circle bg-white text-center trilly">
+                                <i class="fa-solid fa-bell-slash text-notification"></i>
+                            </div>
+                            <div class="px-2">
+                                <div>
+                                    Ricevi notifiche di nuovi messaggi
+                                </div>
+                                <div>
+                                    <a href="#" class="little-text dark-grey ">Attiva notifiche desktop</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-12 bg-search-bar">
+                            <div class="input-group my-2">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <i class="fa-solid fa-magnifying-glass top-icon"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-12 flex-grow-1 overflow-y-auto h0 reset-padding">
+                            <div class="d-flex border-top">
+                                <div class="d-flex py-2">
+                                    <div class="w-15">
+                                        <img src="img/avatar_1.jpg" alt="avatar1" class="img-fluid rounded-circle m-2">
+                                    </div>
+                                    <div class="px-4">
+                                        <div>
+                                            Michele
+                                        </div>
+                                        <div class="little-text">
+                                            Ultimo messaggio inviato
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-end little-text p-2">
+                                    12.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            
+                        </div>
+                        <div class="col-12 col-md-8">
 
-    <main>
-   <div id="app"></div>
-   </main>
+                        </div>
+                        <div class="col-12 col-md-8">
 
-
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- My JS -->
    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
    <script src="js/script.js" type="module"></script>
