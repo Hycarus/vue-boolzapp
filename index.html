@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 reset-padding">
-                            <div v-for="(element) in contacts" :key="element.id" class="d-flex border-top justify-content-between contact">
+                            <div v-for="(element) in contacts" :key="element.id" class="d-flex border-top justify-content-between contact" @click="activeContact = element.id">
                                 <div class="d-flex py-2">
                                     <div class="w-15">
                                         <img :src="element.avatar" alt="avatar1" class="img-fluid rounded-circle m-2">
@@ -85,7 +85,7 @@
                                         </div>
                                         <div class="little-text">
                                             {{element.messages[element.messages.length - 1].message}}
-                                        </div>
+                                        </div> 
                                     </div>
                                 </div>
                                 <div class="little-text p-2">
