@@ -21,8 +21,18 @@ methods: {
             message: this.activeMessage,
             status:'sent'
         })
+        setTimeout(() => {
+            this.sendAnswers() 
+            this.activeMessage = ''
+        }, 1000)
+    },
+    sendAnswers(){
+        this.contacts[this.activeIndex].messages.push({
+            date: new Date().toLocaleString(),
+            message: this.activeMessage,
+            status:'received'
+        })
         this.activeMessage = ''
-
     }
 },
 computed: {
