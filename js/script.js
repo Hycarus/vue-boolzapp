@@ -25,7 +25,7 @@ methods: {
             this.sendAnswers() 
             this.activeMessage = ''
         }, 1000)
-    },
+    }, 
     sendAnswers(){
         this.contacts[this.activeIndex].messages.push({
             date: new Date().toLocaleString(),
