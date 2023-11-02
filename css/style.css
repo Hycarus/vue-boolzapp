@@ -80,3 +80,7 @@ body{
     right: 10px;
     bottom: 5px;
 }
+
+.contact:hover {
+    background-color: var(--color-contact-hover);
+}
