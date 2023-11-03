@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Document Title -->
-    <title>Document</title>
+    <title>Boolzapp</title>
   </head>
 
   <body>
@@ -77,19 +77,19 @@
                             <div v-for="(element) in contacts" :key="element.id" class="d-flex border-top justify-content-between contact" @click="activeContact = element.id" :class="{'active': isActive(element.id)}">
                                 <div class="d-flex py-2">
                                     <div class="w-15">
-                                        <img :src="element.avatar" alt="avatar1" class="img-fluid rounded-circle m-2">
+                                        <img :src="element.avatar" :alt="element.name" class="img-fluid rounded-circle m-2">
                                     </div>
                                     <div class="px-4">
                                         <div>
                                             {{element.name}}
                                         </div>
                                         <div class="little-text">
-                                            {{element.messages[element.messages.length - 1].message}}
+                                            {{getLastMessage(element.id)}}
                                         </div> 
                                     </div>
                                 </div>
                                 <div class="little-text p-2">
-                                    {{element.messages[element.messages.length - 1].date}}
+                                    {{formatHour(getLastAccess(element.id))}}
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                                     </span>
                                     <div class="mx-2 little-text">
                                         Ultimo accesso: 
-                                        {{contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date}}
+                                        {{formatHour(lastDate)}}
                                     </div>
                                 </div>
                             </div>
@@ -120,10 +120,10 @@
                         </div>
                         <div class="col-12 flex-grow-1 chat overflow-y-auto h0">
                             <div class="m-3" v-for="(element, index) in contacts[activeIndex].messages" key="element.id" :class="element.status">
-                                <div class="w-40 rounded-4 m-3 d-inline-block p-3 position-relative" >
+                                <div class="w-40 rounded-4 m-3 d-inline-block p-3 position-relative bubble" >
                                     {{contacts[activeIndex].messages[index].message}}
                                     <span class="little-text position-absolute time-message">
-                                        {{contacts[activeIndex].messages[index].date}}
+                                        {{formatHour(lastDate)}}
                                     </span>
                                 </div>
                             </div>
@@ -154,6 +154,7 @@
         </div>
     </div>
     <!-- My JS -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
    <script src="js/script.js" type="module"></script>
   </body>

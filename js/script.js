@@ -1,3 +1,4 @@
+const dt = luxon.DateTime;
 import {contacts} from './data.js'
 import {getIndex} from './utility.js'
 import {messages} from './data.js'
@@ -20,7 +21,7 @@ methods: {
     },
     sendMessage(){
         this.contacts[this.activeIndex].messages.push({
-            date: new Date().toLocaleString(),
+            date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
             message: this.activeMessage,
             status:'sent'
         })
@@ -34,7 +35,7 @@ methods: {
     }, 
     sendAnswers(){
         this.contacts[this.activeIndex].messages.push({
-            date: new Date().toLocaleString(),
+            date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
             message: this.messages[getRndInteger(0, this.messages.length - 1)],
             status:'received'
         })
@@ -45,12 +46,41 @@ methods: {
     scroll(){
         const element = document.querySelector('.chat');
         element.scroll({top: element.scrollHeight, behavior: 'smooth'});
+    },
+    getLastMessage(id){
+        const contact = this.contacts.find(contact => contact.id === id);
+        const len = contact.messages.length;
+        if(len > 0){
+            return contact.messages[len - 1].message;
+        } else{
+            return 'Non hai messaggi con questo contatto';
+        }
+    },
+    getLastAccess(id){
+        const contact = this.contacts.find(contact => contact.id === id);
+        const len = contact.messages.length;
+        if(len > 0){
+            return contact.messages[len - 1].date;
+        } else{
+            return '';
+        }
+    },
+    formatHour(date){
+        return date.slice(11, 16);
     }
 
 },
 computed: {
     activeIndex(){
         return getIndex(this.activeContact, this.contacts)
-    }
+    },
+    lastDate(){
+        const len = this.contacts[this.activeIndex].messages.length;
+        if(len > 0){
+            return this.contacts[this.activeIndex].messages[len - 1].date;
+        } else{
+            return '';
+        }
+    },
 }
 }).mount('#app')
