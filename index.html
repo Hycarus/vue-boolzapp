@@ -118,13 +118,23 @@
                                 <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5"></i>
                             </div>
                         </div>
-                        <div class="col-12 flex-grow-1 chat overflow-y-auto h0" ref="chat">
-                            <div class="m-3" v-for="(element, index) in contacts[activeIndex].messages" key="element.id" :class="element.status">
-                                <div class="w-40 rounded-4 m-3 d-inline-block p-3 position-relative bubble" >
+                        <div class="col-12 flex-grow-1 chat overflow-y-auto h0 pt-4" ref="chat">
+                            <div class="m-3" v-for="(element, index) in contacts[activeIndex].messages" key="element.id" >
+                                <div class="w-40 rounded-4 m-2 d-inline-block p-3 position-relative" :class="element.status">
                                     {{contacts[activeIndex].messages[index].message}}
                                     <span class="little-text position-absolute time-message">
                                         {{formatHour(lastDate)}}
                                     </span>
+                                    <span class="little-text position-absolute chevron-message" @click="dropDown">
+                                        <i class="fa-solid fa-chevron-down "></i>
+                                    </span>
+                                    <div class="drop-down-menu d-none">
+                                        <div>Dettagli messaggio</div>
+                                        <div>
+                                            <i class="fa-solid fa-trash text-danger"></i>
+                                            <span class="text-danger">Cancella Messaggio</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
