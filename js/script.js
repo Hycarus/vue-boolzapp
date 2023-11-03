@@ -75,9 +75,18 @@ methods: {
             contact.name.toLowerCase().includes(this.findContact.toLowerCase())
         );
     },
-    dropDownRemove(){
-        this.clicked = null;
+    dropDownRemove(index){
+        if(this.clicked!== null){
+            this.clicked = null;
+        }else{
+            this.clicked = index;
+        }
     },
+    deleteMessage(index){
+        this.contacts[this.activeIndex].messages.splice(index, 1);
+        this.clicked = null;
+    }
+
 },
 computed: {
     activeIndex(){

@@ -127,7 +127,9 @@ body{
 .w-40{
     width: 40%;
 }
-
+.delete-message{
+    cursor: pointer;
+}
 
 .bubble {
     --r: 25px; /* the radius */
