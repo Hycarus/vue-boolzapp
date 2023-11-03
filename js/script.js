@@ -74,6 +74,9 @@ methods: {
             contact.name.toLowerCase().includes(this.findContact.toLowerCase())
         );
     },
+    dropDown(){
+        
+    },
 },
 computed: {
     activeIndex(){
