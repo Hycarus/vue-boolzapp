@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 reset-padding">
-                            <div v-for="(element) in filterContact()" :key="element.id" class="d-flex border-top justify-content-between contact" @click="activeContact = element.id" :class="{'active': isActive(element.id)}">
+                            <div v-for="(element) in filterContact()" :key="element.id" class="d-flex border-top justify-content-between contact" @click="activeContact = element.id, dropDownRemove()" :class="{'active': isActive(element.id)}">
                                 <div class="d-flex py-2">
                                     <div class="w-15">
                                         <img :src="element.avatar" :alt="element.name" class="img-fluid rounded-circle m-2">
@@ -118,17 +118,17 @@
                                 <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5"></i>
                             </div>
                         </div>
-                        <div class="col-12 flex-grow-1 chat overflow-y-auto h0 pt-4" ref="chat">
+                        <div class="col-12 flex-grow-1 chat overflow-y-auto h0 pt-4" ref="chat" @click="dropDownRemove()">
                             <div class="m-3" v-for="(element, index) in contacts[activeIndex].messages" key="element.id" >
                                 <div class="w-40 rounded-4 m-2 d-inline-block p-3 position-relative message" :class="element.status">
                                     {{contacts[activeIndex].messages[index].message}}
                                     <span class="little-text position-absolute time-message">
                                         {{formatHour(lastDate)}}
                                     </span>
-                                    <span class="little-text position-absolute chevron-message" @click="dropDown">
+                                    <span class="little-text position-absolute chevron-message" @click.stop="clicked = index">
                                         <i class="fa-solid fa-chevron-down d-none"></i>
                                     </span>
-                                    <div class="drop-down-menu d-none">
+                                    <div class="drop-down-menu" v-show="index === clicked">
                                         <div>Dettagli messaggio</div>
                                         <div>
                                             <i class="fa-solid fa-trash text-danger"></i>

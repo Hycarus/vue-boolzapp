@@ -13,6 +13,7 @@ data(){
         activeMessage: '',
         messages: messages,
         findContact: '',
+        clicked: null,
     }
 },
 // contiene le funzioni e i metodi
@@ -74,8 +75,8 @@ methods: {
             contact.name.toLowerCase().includes(this.findContact.toLowerCase())
         );
     },
-    dropDown(){
-        
+    dropDownRemove(){
+        this.clicked = null;
     },
 },
 computed: {
