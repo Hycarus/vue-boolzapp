@@ -12,6 +12,7 @@ data(){
         activeContact: 1,
         activeMessage: '',
         messages: messages,
+        findContact: '',
     }
 },
 // contiene le funzioni e i metodi
@@ -44,7 +45,7 @@ methods: {
         }, 100)
     },
     scroll(){
-        const element = document.querySelector('.chat');
+        const element = this.$refs.chat;
         element.scroll({top: element.scrollHeight, behavior: 'smooth'});
     },
     getLastMessage(id){
@@ -67,8 +68,12 @@ methods: {
     },
     formatHour(date){
         return date.slice(11, 16);
-    }
-
+    },
+    filterContact(){
+        return this.contacts.filter((contact) => 
+            contact.name.toLowerCase().includes(this.findContact.toLowerCase())
+        );
+    },
 },
 computed: {
     activeIndex(){

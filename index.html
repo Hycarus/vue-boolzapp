@@ -70,11 +70,11 @@
                                         <i class="fa-solid fa-magnifying-glass top-icon"></i>
                                     </button>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1" v-model="findContact">
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 reset-padding">
-                            <div v-for="(element) in contacts" :key="element.id" class="d-flex border-top justify-content-between contact" @click="activeContact = element.id" :class="{'active': isActive(element.id)}">
+                            <div v-for="(element) in filterContact()" :key="element.id" class="d-flex border-top justify-content-between contact" @click="activeContact = element.id" :class="{'active': isActive(element.id)}">
                                 <div class="d-flex py-2">
                                     <div class="w-15">
                                         <img :src="element.avatar" :alt="element.name" class="img-fluid rounded-circle m-2">
@@ -118,7 +118,7 @@
                                 <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5"></i>
                             </div>
                         </div>
-                        <div class="col-12 flex-grow-1 chat overflow-y-auto h0">
+                        <div class="col-12 flex-grow-1 chat overflow-y-auto h0" ref="chat">
                             <div class="m-3" v-for="(element, index) in contacts[activeIndex].messages" key="element.id" :class="element.status">
                                 <div class="w-40 rounded-4 m-3 d-inline-block p-3 position-relative bubble" >
                                     {{contacts[activeIndex].messages[index].message}}
@@ -127,14 +127,6 @@
                                     </span>
                                 </div>
                             </div>
-                            <!-- <div class="text-end m-3">
-                                <div class="sent w-25 rounded-4 m-3 text-start d-inline-block p-3 position-relative" >
-                                    inviato
-                                    <span class="little-text position-absolute time-message">
-                                        12.00
-                                    </span>
-                                </div>
-                            </div> -->
                         </div>
                         <div class="col-12 header d-flex align-items-center justify-content-evenly p-2">
                             <i class="fa-regular fa-face-smile fa dark-grey"></i>
