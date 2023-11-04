@@ -14,6 +14,7 @@ data(){
         messages: messages,
         findContact: '',
         clicked: null,
+        theme: 'light',
     }
 },
 // contiene le funzioni e i metodi
@@ -102,8 +103,20 @@ methods: {
         rightSection.classList.remove('d-none');
         leftSection.classList.add('d-none');
         returnContact.classList.remove('d-none');
+    },
+    switchToDarkMode(){
+        const sun = this.$refs.sun;
+        const moon = this.$refs.moon;
+        if(this.theme === 'dark'){
+            sun.classList.remove('d-none');
+            moon.classList.add('d-none');
+            this.theme = 'light';
+        } else if(this.theme === 'light'){
+            sun.classList.add('d-none');
+            moon.classList.remove('d-none');
+            this.theme = 'dark';
+        }
     }
-
 },
 computed: {
     activeIndex(){

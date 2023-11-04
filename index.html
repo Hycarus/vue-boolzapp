@@ -47,6 +47,12 @@
                                 </span>
                             </div>
                             <div class="d-flex top-icon">
+                                <i class="fa-regular fa-sun mx-2 fs-5" ref="sun"></i>
+                                <i class="fa-solid fa-moon mx-2 fs-5 d-none" ref="moon"></i>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round" @click="switchToDarkMode()"></span>
+                                </label>
                                 <i class="fa-solid fa-circle-notch mx-2 fs-5"></i>
                                 <i class="fa-solid fa-message mx-2 fs-5"></i>
                                 <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5"></i>
