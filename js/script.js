@@ -81,10 +81,27 @@ methods: {
         }else{
             this.clicked = index;
         }
+        this.switchToChat
     },
     deleteMessage(index){
         this.contacts[this.activeIndex].messages.splice(index, 1);
         this.clicked = null;
+    },
+    switchToContact(){
+        const returnContact = this.$refs.return;
+        const rightSection = this.$refs.right;
+        const leftSection = this.$refs.left;
+        returnContact.classList.add('d-none');
+        rightSection.classList.add('d-none');
+        leftSection.classList.remove('d-none');
+    },
+    switchToChat(){
+        const rightSection = this.$refs.right;
+        const leftSection = this.$refs.left;
+        const returnContact = this.$refs.return;
+        rightSection.classList.remove('d-none');
+        leftSection.classList.add('d-none');
+        returnContact.classList.remove('d-none');
     }
 
 },
@@ -100,5 +117,13 @@ computed: {
             return '';
         }
     },
-}
+},
+mounted() {
+    const splash = this.$refs.splash;
+    const app = this.$refs.app;
+    setTimeout(() => {
+        splash.classList.add('d-none');
+        app.classList.remove('d-none');
+    }, 1000);
+},
 }).mount('#app')

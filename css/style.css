@@ -126,7 +126,7 @@ body{
     cursor: pointer;
 }
 .message:hover .fa-chevron-down{
-display: flex!important;
+    display: flex!important;
 }
 .sent:before {
     content: "";
@@ -140,7 +140,7 @@ display: flex!important;
     background-attachment: fixed;
     border-bottom-left-radius: 15px;
   }
-  .sent:after {
+.sent:after {
     content: "";
     position: absolute;
     z-index: 1;
@@ -150,8 +150,8 @@ display: flex!important;
     height: 20px;
     background: url(../img/mine.jpg);
     border-bottom-left-radius: 10px;
-  }
-  .received:before {
+}
+.received:before {
     content: "";
     position: absolute;
     z-index: 0;
@@ -161,8 +161,8 @@ display: flex!important;
     width: 20px;
     background: var(--color-bg-search-bar);
     border-bottom-right-radius: 15px;
-  }
-  .received:after {
+}
+.received:after {
     content: "";
     position: absolute;
     z-index: 1;
@@ -172,4 +172,7 @@ display: flex!important;
     height: 20px;
     background: url(../img/mine.jpg);
     border-bottom-right-radius: 10px;
-  }
+}
+@media screen and (min-width: 768px) {
+
+}
