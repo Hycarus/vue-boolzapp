@@ -14,7 +14,8 @@ data(){
         messages: messages,
         findContact: '',
         clicked: null,
-        theme: 'light',
+        theme: true,
+        backgroundImage: 'img/mine.jpeg',
     }
 },
 // contiene le funzioni e i metodi
@@ -114,14 +115,19 @@ methods: {
     switchToDarkMode(){
         const sun = this.$refs.sun;
         const moon = this.$refs.moon;
-        if(this.theme === 'dark'){
+        const darkMode = this.$refs.app;
+        if(this.theme === false){
             sun.classList.remove('d-none');
             moon.classList.add('d-none');
-            this.theme = 'light';
-        } else if(this.theme === 'light'){
+            darkMode.setAttribute('data-bs-theme', 'light');
+            this.backgroundImage = 'img/mine.jpeg';
+            this.theme = true;
+        } else if(this.theme === true){
             sun.classList.add('d-none');
             moon.classList.remove('d-none');
-            this.theme = 'dark';
+            darkMode.setAttribute('data-bs-theme', 'dark');
+            this.backgroundImage = 'img/mine-dark.jpeg';
+            this.theme = false;
         }
     }
 },
