@@ -71,7 +71,6 @@ body{
     background-image: url(../img/mine.jpg);
 }
 .sent{
-
     text-align: right;
     background-color: var(--color-sent-message);
     position: relative;
@@ -81,25 +80,14 @@ body{
     text-align: left;
     background-color: var(--color-bg-search-bar);
 }
-.sent div{
-    --_d: 100%;
-    border-right: var(--t) solid #0000;
-    margin-left: var(--t);
-    place-self: end;
-}
-.received div{
-    --_d: 0%;
-    border-left: var(--t) solid #0000;
-    margin-right: var(--t);
-    place-self: start;
-}
+
 .time-message{
     right: 10px;
     bottom: 5px;
 }
 .chevron-message{
-    top: 5px;
-    right: 10px;
+    top: 10px;
+    right: 15px;
     cursor: pointer;
 }
 .drop-down-menu{
@@ -110,7 +98,11 @@ body{
     top: -40px;
     right: 10px;
     font-size: 12px;
-    background-color: var(--color-light-icons) !important;
+    background-color: var(--color-contact-hover) !important;
+    border: 1px solid var(--color-dark-grey);
+}
+.drop-down-menu div:hover{
+    background-color: var(--color-text-grey);
 }
 .contact:hover {
     background-color: var(--color-contact-hover);
@@ -130,20 +122,54 @@ body{
 .delete-message{
     cursor: pointer;
 }
-
-.bubble {
-    --r: 25px; /* the radius */
-    --t: 30px; /* the size of the tail */
-    -webkit-mask: 
-    radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
-      var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
-    conic-gradient(at var(--r) var(--r),#000 75%,#0000 0) 
-      calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
-    radial-gradient(50% 50%,#000 98%,#0000 101%) 
-      0 0/var(--r) var(--r) space padding-box;
-    max-width: 300px;
-    padding: calc(2*var(--r)/3);
+.details{
+    cursor: pointer;
+}
+.message:hover .fa-chevron-down{
+display: flex!important;
+}
+.sent:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: -8px;
+    height: 20px;
+    width: 20px;
+    background-color: var(--color-sent-message);
+    background-attachment: fixed;
+    border-bottom-left-radius: 15px;
   }
-  .message:hover .fa-chevron-down{
-    display: flex!important;
+  .sent:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: -10px;
+    width: 10px;
+    height: 20px;
+    background: url(../img/mine.jpg);
+    border-bottom-left-radius: 10px;
+  }
+  .received:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: -7px;
+    height: 20px;
+    width: 20px;
+    background: var(--color-bg-search-bar);
+    border-bottom-right-radius: 15px;
+  }
+  .received:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: -10px;
+    width: 10px;
+    height: 20px;
+    background: url(../img/mine.jpg);
+    border-bottom-right-radius: 10px;
   }

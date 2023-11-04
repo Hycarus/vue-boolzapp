@@ -129,9 +129,11 @@
                                         <i class="fa-solid fa-chevron-down d-none"></i>
                                     </span>
                                     <div class="drop-down-menu" v-show="index === clicked">
-                                        <div>Dettagli messaggio</div>
+                                        <div class="details">
+                                            <i class="fa-regular fa-circle-question"></i>
+                                            Dettagli messaggio</div>
                                         <div @click="deleteMessage(index)" class="delete-message">
-                                            <i class="fa-solid fa-trash text-danger"></i>
+                                            <i class="fa-solid fa-trash text-danger"></i> 
                                             <span class="text-danger">Cancella Messaggio</span>
                                         </div>
                                     </div>
