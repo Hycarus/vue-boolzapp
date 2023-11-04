@@ -89,20 +89,27 @@ methods: {
         this.clicked = null;
     },
     switchToContact(){
-        const returnContact = this.$refs.return;
-        const rightSection = this.$refs.right;
-        const leftSection = this.$refs.left;
-        returnContact.classList.add('d-none');
-        rightSection.classList.add('d-none');
-        leftSection.classList.remove('d-none');
+        const mq = window.matchMedia("(max-width: 768px)");
+        if(mq.matches){
+            const returnContact = this.$refs.return;
+            const rightSection = this.$refs.right;
+            const leftSection = this.$refs.left;
+            returnContact.classList.add('d-none');
+            rightSection.classList.add('d-none');
+            leftSection.classList.remove('d-none');
+            }
     },
     switchToChat(){
-        const rightSection = this.$refs.right;
-        const leftSection = this.$refs.left;
-        const returnContact = this.$refs.return;
-        rightSection.classList.remove('d-none');
-        leftSection.classList.add('d-none');
-        returnContact.classList.remove('d-none');
+        const mq = window.matchMedia("(max-width: 768px)");
+        if(mq.matches){
+            const rightSection = this.$refs.right;
+            const leftSection = this.$refs.left;
+            const returnContact = this.$refs.return;
+            rightSection.classList.remove('d-none');
+            leftSection.classList.add('d-none');
+            returnContact.classList.remove('d-none');
+            }
+        
     },
     switchToDarkMode(){
         const sun = this.$refs.sun;
