@@ -16,6 +16,7 @@ data(){
         clicked: null,
         theme: true,
         backgroundImage: 'img/mine.jpeg',
+        backgroundImageStyle: 'url(../img/mine.jpeg)',
     }
 },
 // contiene le funzioni e i metodi

@@ -50,7 +50,7 @@ body{
     padding-right: 0 !important;
 }
 .sent{
-    text-align: right;
+    text-align: left;
     background-color: var(--bs-success);
     position: relative;
     left: 58%;
@@ -109,48 +109,27 @@ body{
 }
 .sent:before {
     content: "";
+    width: 0px;
+    height: 0px;
     position: absolute;
-    z-index: 0;
-    bottom: 0;
-    right: -8px;
-    height: 20px;
-    width: 20px;
-    background-color: var(--bs-success);
-    background-attachment: fixed;
-    border-bottom-left-radius: 15px;
+    border-left: 15px solid var(--bs-success);
+    border-right: 15px solid transparent;
+    border-top: 15px solid var(--bs-success);
+    border-bottom: 15px solid transparent;
+    right: -16px;
+    top: 0px;
   }
-.sent:after {
+.received:before{
     content: "";
+    width: 0px;
+    height: 0px;
     position: absolute;
-    z-index: 1;
-    bottom: 0;
-    right: -10px;
-    width: 10px;
-    height: 20px;
-    background-image: var(--my-bg-image);
-    border-bottom-left-radius: 10px;
-}
-.received:before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-    left: -7px;
-    height: 20px;
-    width: 20px;
-    background: var(--bs-secondary-bg);
-    border-bottom-right-radius: 15px;
-}
-.received:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: -10px;
-    width: 10px;
-    height: 20px;
-    background-image: var(--my-bg-image);
-    border-bottom-right-radius: 10px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid var(--bs-secondary-bg);
+    border-top: 15px solid var(--bs-secondary-bg);
+    border-bottom: 15px solid transparent;
+    left: -16px;
+    top: 0px;
 }
 /* The switch - the box around the slider */
 .switch {
