@@ -17,6 +17,8 @@ data(){
         theme: true,
         backgroundImage: 'img/mine.jpeg',
         backgroundImageStyle: 'url(../img/mine.jpeg)',
+        onlineStatus: false,
+        isWriting: false,
     }
 },
 // contiene le funzioni e i metodi
@@ -33,11 +35,19 @@ methods: {
             })
             this.activeMessage = ''
             setTimeout(() => {
-                        this.scroll() 
+                    this.scroll() 
             }, 100)
             setTimeout(() => {
+                this.isWriting = true; 
+            }, 2000)
+            setTimeout(() => {
                 this.sendAnswers() 
-            }, 1000)
+                this.isWriting = false;
+                this.onlineStatus = true;
+            }, 5000);
+            setTimeout(() => {
+                this.onlineStatus = false;
+            }, 7000);
         }
         
     }, 
