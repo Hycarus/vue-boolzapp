@@ -25,18 +25,21 @@ methods: {
         return id === this.activeContact ? true : false;
     },
     sendMessage(){
-        this.contacts[this.activeIndex].messages.push({
-            date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
-            message: this.activeMessage,
-            status:'sent'
-        })
-        this.activeMessage = ''
-        setTimeout(() => {
-                    this.scroll() 
-        }, 100)
-        setTimeout(() => {
-            this.sendAnswers() 
-        }, 1000)
+        if(this.activeMessage.trim()!== ''){
+            this.contacts[this.activeIndex].messages.push({
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                message: this.activeMessage,
+                status:'sent'
+            })
+            this.activeMessage = ''
+            setTimeout(() => {
+                        this.scroll() 
+            }, 100)
+            setTimeout(() => {
+                this.sendAnswers() 
+            }, 1000)
+        }
+        
     }, 
     sendAnswers(){
         this.contacts[this.activeIndex].messages.push({
