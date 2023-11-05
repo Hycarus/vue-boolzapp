@@ -11,6 +11,9 @@ body{
     background: var(--my-bg-color);
     padding: 20px;
 }
+.my-default{
+    background-color: var(--bs-secondary-bg);
+}
 .my-text-dark{
     color: var(--bs-body-color)!important;
 }
@@ -79,6 +82,13 @@ body{
     font-size: 12px;
     background-color: var(--bs-secondary-bg) !important;
     border: 1px solid var(--bs-tertiary-color);
+}
+.main-drop-down-menu{
+    top: 40px;
+    text-align: start;
+}
+.cursor-pointer{
+    cursor: pointer;
 }
 .drop-down-menu div:hover{
     background-color: var(--bs-dark-bg-subtle);
