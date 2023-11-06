@@ -21,6 +21,8 @@ data(){
         isWriting: false,
         dropDownFlag: false,
         fontSize: 16,
+        mainMenuFlag: false,
+        popUp: false,
     }
 },
 // contiene le funzioni e i metodi
@@ -36,9 +38,7 @@ methods: {
                 status:'sent'
             })
             this.activeMessage = ''
-            setTimeout(() => {
-                    this.scroll() 
-            }, 100)
+            this.$nextTick(() => this.scroll())
             setTimeout(() => {
                 this.isWriting = true; 
             }, 2000)
@@ -59,9 +59,7 @@ methods: {
             message: this.messages[getRndInteger(0, this.messages.length - 1)],
             status:'received'
         })
-        setTimeout(() => {
-            this.scroll() 
-        }, 100)
+        this.$nextTick(() => this.scroll())
     },
     scroll(){
         const element = this.$refs.chat;
