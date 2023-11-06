@@ -20,6 +20,7 @@ data(){
         onlineStatus: false,
         isWriting: false,
         dropDownFlag: false,
+        fontSize: 16,
     }
 },
 // contiene le funzioni e i metodi
@@ -151,7 +152,17 @@ methods: {
             this.backgroundImage = 'img/mine-dark.jpeg';
             this.theme = false;
         }
-    }
+    },
+    fontSizeUp() {
+        if(this.fontSize < 30){
+            this.fontSize++;
+        }
+    },
+    fontSizeDown() {
+        if(this.fontSize > 10){
+            this.fontSize--;
+        }
+    },
 },
 computed: {
     activeIndex(){
