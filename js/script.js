@@ -9,7 +9,7 @@ createApp({
 data(){
     return {
         contacts: contacts,
-        activeContact: 1,
+        activeContact: null,
         activeMessage: '',
         messages: messages,
         findContact: '',
@@ -19,6 +19,7 @@ data(){
         backgroundImageStyle: 'url(../img/mine.jpeg)',
         onlineStatus: false,
         isWriting: false,
+        dropDownFlag: false,
     }
 },
 // contiene le funzioni e i metodi
@@ -102,6 +103,13 @@ methods: {
     deleteMessage(index){
         this.contacts[this.activeIndex].messages.splice(index, 1);
         this.clicked = null;
+    },
+    deleteAllMessage(){
+        this.contacts[this.activeIndex].messages = [];
+    },
+    deleteContact(){
+        this.contacts.splice(this.activeIndex, 1);
+        this.activeContact = null;
     },
     switchToContact(){
         const mq = window.matchMedia("(max-width: 768px)");
