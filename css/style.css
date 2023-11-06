@@ -87,6 +87,9 @@ body{
     top: 40px;
     text-align: start;
 }
+.left-drop-down-menu{
+    top: 30px;
+}
 .cursor-pointer{
     cursor: pointer;
 }
@@ -140,6 +143,19 @@ body{
     border-bottom: 15px solid transparent;
     left: -16px;
     top: 0px;
+}
+.popup{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30em;
+    z-index: 1000;
+    border: 1px solid var(--bs-secondary-bg);
+    background-color: var(--bs-secondary-bg);
+}
+.btn.position-absolute{
+    right: 0;
+    top: 0;
 }
 /* The switch - the box around the slider */
 .switch {

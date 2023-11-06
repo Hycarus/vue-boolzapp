@@ -34,7 +34,7 @@
             <img src="img/html-css-js.png" alt="splash" class="img-fluid">
         </div>
         <div class="container h-100 d-none shadow" ref="app" :style="'font-size:' + fontSize + 'px'">
-            <div class="row h-100 flex-nowrap" @click="dropDownFlag = false">
+            <div class="row h-100 flex-nowrap" @click="dropDownFlag = false, mainMenuFlag = false">
                 <div class="col-12 col-md-4 white border-end" ref="left">
                     <div class="row h-100 flex-column ">
                         <div class="col-12 header d-flex justify-content-between align-items-center">
@@ -46,7 +46,7 @@
                                     Mirko
                                 </span>
                             </div>
-                            <div class="d-flex top-icon">
+                            <div class="d-flex top-icon position-relative" >
                                 <i class="fa-solid fa-plus mx-2 fs-5 cursor-pointer" @click="fontSizeUp()"></i>
                                 <i class="fa-solid fa-minus mx-2 fs-5 cursor-pointer" @click="fontSizeDown()"></i>
                                 <i class="fa-regular fa-sun mx-2 fs-5" ref="sun"></i>
@@ -57,7 +57,28 @@
                                 </label>
                                 <i class="fa-solid fa-circle-notch mx-2 fs-5"></i>
                                 <i class="fa-solid fa-message mx-2 fs-5"></i>
-                                <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5"></i>
+                                <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5 cursor-pointer" @click.stop="mainMenuFlag = !mainMenuFlag"></i>
+                                <div class="drop-down-menu left-drop-down-menu" v-show="mainMenuFlag === true">
+                                    <div @click.stop="popUp = true, mainMenuFlag = false" class="cursor-pointer">
+                                        Nuovo contatto
+                                    </div>
+                                </div>
+                                <div class="popup position-fixed rounded rounded-2 p-3" v-show="popUp === true">
+                                    <div>
+                                        <button class="btn position-absolute" @click.stop="popUp = false">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                        <div class="mb-3">
+                                          <label for="contatto" class="form-label">Nome contatto</label>
+                                          <input type="text" class="form-control" id="contatto" v-model="popUpName">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="image" class="form-label">Foto profilo</label>
+                                          <input type="text" class="form-control" id="image" v-model="popUpImage">
+                                        </div>
+                                        <button type="button" class="btn" @click="createNewContact(), popUp = false">Crea</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 d-flex bg-notification p-3">

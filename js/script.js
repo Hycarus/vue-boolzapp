@@ -23,6 +23,8 @@ data(){
         fontSize: 16,
         mainMenuFlag: false,
         popUp: false,
+        popUpName: '',
+        popUpImage: '',
     }
 },
 // contiene le funzioni e i metodi
@@ -160,6 +162,18 @@ methods: {
         if(this.fontSize > 10){
             this.fontSize--;
         }
+    },
+    createNewContact(){
+        if(this.popUpName.trim()!== '' && this.popUpImage.trim()){
+            this.contacts.push({
+                id: this.contacts.length + 1,
+                name: this.popUpName,
+                avatar: this.popUpImage,
+                messages: []
+            })
+        }
+        this.popUpName = '';
+        this.popUpImage = '';
     },
 },
 computed: {
