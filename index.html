@@ -65,18 +65,18 @@
                                 </div>
                                 <div class="popup position-fixed rounded rounded-2 p-3" v-show="popUp === true">
                                     <div>
-                                        <button class="btn position-absolute" @click.stop="popUp = false">
+                                        <button class="btn position-absolute my-text-dark" @click.stop="popUp = false">
                                             <i class="fa-solid fa-xmark"></i>
                                         </button>
                                         <div class="mb-3">
-                                          <label for="contatto" class="form-label">Nome contatto</label>
+                                          <label for="contatto" class="form-label my-text-dark">Nome contatto</label>
                                           <input type="text" class="form-control" id="contatto" v-model="popUpName">
                                         </div>
                                         <div class="mb-3">
-                                          <label for="image" class="form-label">Foto profilo</label>
+                                          <label for="image" class="form-label my-text-dark">Foto profilo</label>
                                           <input type="text" class="form-control" id="image" v-model="popUpImage">
                                         </div>
-                                        <button type="button" class="btn" @click="createNewContact(), popUp = false">Crea</button>
+                                        <button type="button" class="btn my-text-dark" @click="createNewContact(), popUp = false">Crea</button>
                                     </div>
                                 </div>
                             </div>
